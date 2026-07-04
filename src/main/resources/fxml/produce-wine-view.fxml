@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="850.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.ProduceWineController">
+
+    <children>
+        <Label layoutX="25.0" layoutY="20.0" text="Produce Wine"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <Label layoutX="25.0" layoutY="70.0" text="Wine type:" />
+        <ComboBox fx:id="wineTypeComboBox" layoutX="140.0" layoutY="66.0" prefWidth="200.0" />
+
+        <Label layoutX="25.0" layoutY="110.0" text="Bottle type:" />
+        <ComboBox fx:id="bottleTypeComboBox" layoutX="140.0" layoutY="106.0" prefWidth="200.0" />
+
+        <Label layoutX="25.0" layoutY="150.0" text="Liters to bottle:" />
+        <TextField fx:id="litersField" layoutX="140.0" layoutY="146.0" prefWidth="200.0" />
+
+        <Button layoutX="25.0" layoutY="200.0" text="Bottle Wine" onAction="#onBottledWine" />
+        <Button layoutX="120.0" layoutY="200.0" text="Back" onAction="#onBackToDashboard" />
+
+        <Label fx:id="messageLabel" layoutX="25.0" layoutY="245.0" prefWidth="400.0" />
+
+        <Label layoutX="430.0" layoutY="70.0" text="Bottled wine records:" />
+        <ListView fx:id="bottledWineListView" layoutX="430.0" layoutY="95.0" prefWidth="380.0" prefHeight="400.0" />
+    </children>
+</AnchorPane>

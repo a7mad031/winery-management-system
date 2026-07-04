@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="12.0"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.DashboardController">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <Label text="Wine Factory Dashboard"/>
+    <Label text="Registered grape varieties:"/>
+    <ListView fx:id="grapeListView" prefHeight="180.0" prefWidth="320.0"/>
+
+
+    <Button fx:id="manageGrapesButton" text="Manage Grape Varieties" onAction="#onManageGrapes"/>
+    <Button fx:id="manageWineTypesButton" text="Manage Wine Types" onAction="#onManageWineTypes"/>
+    <Button fx:id="produceWineButton" text="Produce Wine" onAction="#onProduceWine"/>
+    <Button fx:id="viewNotificationsButton" text="View Notifications" onAction="#onViewNotifications"/>
+    <Button fx:id="generateReportsButton" text="Reports" onAction="#onGenerateReports"/>
+    <Button fx:id="manageProductionBatchesButton" text="Manage Production Batches" onAction="#onManageProductionBatches"/>
+    <Button fx:id="manageBottleTypesButton" text="Manage Bottle Types" onAction="#onManageBottleTypes"/>
+    <Button fx:id="manageUsersButton" text="Manage Users" onAction="#onManageUsers"/>
+
+    <Label fx:id="messageLabel" text="Choose an action"/>
+</VBox>

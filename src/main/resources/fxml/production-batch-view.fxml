@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="560.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.ProductionBatchController">
+
+    <children>
+        <Label layoutX="30.0" layoutY="20.0" text="Manage Production Batches"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <Label layoutX="30.0" layoutY="70.0" text="Batch code:" />
+        <TextField fx:id="batchCodeField" layoutX="180.0" layoutY="66.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="110.0" text="Production date:" />
+        <DatePicker fx:id="productionDatePicker" layoutX="180.0" layoutY="106.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="150.0" text="Liters produced:" />
+        <TextField fx:id="litersProducedField" layoutX="180.0" layoutY="146.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="190.0" text="Status:" />
+        <TextField fx:id="statusField" layoutX="180.0" layoutY="186.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="230.0" text="Notes:" />
+        <TextField fx:id="notesField" layoutX="180.0" layoutY="226.0" prefWidth="220.0" />
+
+        <Label layoutX="30.0" layoutY="270.0" text="Wine:" />
+        <ComboBox fx:id="wineComboBox" layoutX="180.0" layoutY="266.0" prefWidth="220.0" />
+
+        <Button layoutX="30.0" layoutY="320.0" mnemonicParsing="false" onAction="#onAddBatch" text="Add Batch" />
+        <Button layoutX="130.0" layoutY="320.0" mnemonicParsing="false" onAction="#onUpdateBatch" text="Update Batch" />
+        <Button layoutX="250.0" layoutY="320.0" mnemonicParsing="false" onAction="#onDeleteBatch" text="Delete Batch" />
+        <Button layoutX="370.0" layoutY="320.0" mnemonicParsing="false" onAction="#onClearFields" text="Clear Fields" />
+        <Button layoutX="500.0" layoutY="320.0" mnemonicParsing="false" onAction="#onBackToDashboard" text="Back" />
+
+        <Label fx:id="messageLabel" layoutX="30.0" layoutY="370.0" prefWidth="500.0" />
+
+        <ListView fx:id="batchListView" layoutX="450.0" layoutY="66.0" prefHeight="220.0" prefWidth="300.0" />
+    </children>
+</AnchorPane>

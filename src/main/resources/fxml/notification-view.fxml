@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.NotificationController"
+            prefWidth="900.0" prefHeight="600.0">
+
+    <top>
+        <Label text="Notifications" style="-fx-font-size: 24px; -fx-font-weight: bold;">
+            <BorderPane.margin>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <HBox spacing="20">
+            <children>
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Grape alerts"/>
+                        <ListView fx:id="grapeNotificationsListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Bottle alerts"/>
+                        <ListView fx:id="bottleNotificationsListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </HBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10">
+            <children>
+                <Label fx:id="messageLabel"/>
+                <HBox spacing="10">
+                    <children>
+                        <Button text="Refresh" onAction="#onRefresh"/>
+                        <Button text="Back" onAction="#onBackToDashboard"/>
+                    </children>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets top="0" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </VBox>
+    </bottom>
+</BorderPane>

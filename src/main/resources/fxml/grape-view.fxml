@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.GrapeController">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <Label text="Manage Grape Varieties"/>
+
+    <TextField fx:id="nameField" promptText="Grape name"/>
+    <ComboBox fx:id="categoryComboBox" promptText="Category"/>
+    <TextField fx:id="quantityField" promptText="Quantity (kg)"/>
+    <TextField fx:id="yieldField" promptText="Wine yield per kg"/>
+    <TextField fx:id="criticalMinimumField" promptText="Critical minimum (kg)"/>
+
+    <Button text="Add" onAction="#onAddGrape"/>
+    <Button text="Update Selected" onAction="#onUpdateGrape"/>
+    <Button text="Delete Selected" onAction="#onDeleteGrape"/>
+    <Button text="Clear Fields" onAction="#onClearFields"/>
+    <Button text="Back to Dashboard" onAction="#onBackToDashboard"/>
+
+    <ListView fx:id="grapeListView" prefHeight="220.0" prefWidth="350.0"/>
+
+    <Label fx:id="messageLabel" text="Ready"/>
+</VBox>

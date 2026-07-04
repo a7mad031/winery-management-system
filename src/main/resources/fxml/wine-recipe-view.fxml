@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.WineRecipeController"
+            prefWidth="1000.0" prefHeight="650.0">
+
+    <top>
+        <Label text="Manage Wine Types and Recipes"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER_LEFT">
+            <BorderPane.margin>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <GridPane hgap="20" vgap="15">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="48" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="52" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints vgrow="NEVER"/>
+            </rowConstraints>
+
+            <children>
+
+                <VBox spacing="15" GridPane.columnIndex="0">
+                    <children>
+                        <GridPane hgap="10" vgap="15">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="130"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="Wine type name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="wineTypeNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                           maxWidth="1.7976931348623157E308"/>
+
+                                <Label text="Grape variety:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="grapeComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                          maxWidth="1.7976931348623157E308"/>
+
+                                <Label text="Required quantity (kg):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextField fx:id="requiredQuantityField" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                           maxWidth="1.7976931348623157E308"/>
+                            </children>
+                        </GridPane>
+
+                        <HBox spacing="10">
+                            <children>
+                                <Button text="Add Recipe Item" onAction="#onAddRecipeItem"/>
+                                <Button text="Remove Recipe Item" onAction="#onRemoveRecipeItem"/>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="10">
+                            <children>
+                                <Button text="Save Wine Type" onAction="#onSaveWineType"/>
+                                <Button text="Delete Wine Type" onAction="#onDeleteWineType"/>
+                                <Button text="Clear" onAction="#onClearFields"/>
+                                <Button text="Back" onAction="#onBackToDashboard"/>
+                            </children>
+                        </HBox>
+
+                        <Label text="Recipe items:"/>
+                        <ListView fx:id="recipeItemsListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Saved wine types:"/>
+                        <ListView fx:id="wineTypesListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+
+            </children>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <Label fx:id="messageLabel" BorderPane.alignment="CENTER_LEFT">
+            <BorderPane.margin>
+                <Insets top="0" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bg.tu_varna.sit.winefactory.presentation.controllers.ReportController"
+            prefWidth="1100.0" prefHeight="700.0">
+
+    <top>
+        <VBox spacing="15">
+            <children>
+                <Label text="Reports" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                <HBox spacing="10">
+                    <children>
+                        <Label text="From:"/>
+                        <DatePicker fx:id="fromDatePicker"/>
+                        <Label text="To:"/>
+                        <DatePicker fx:id="toDatePicker"/>
+                        <Button text="Generate Report" onAction="#onGenerateReport"/>
+                        <Button text="Back" onAction="#onBackToDashboard"/>
+                    </children>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </BorderPane.margin>
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane hgap="20" vgap="20">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33.33" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.33" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.34" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS"/>
+            </rowConstraints>
+
+            <children>
+                <VBox spacing="10" GridPane.columnIndex="0">
+                    <children>
+                        <Label text="Grape stock report"/>
+                        <ListView fx:id="grapeReportListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Bottle stock report"/>
+                        <ListView fx:id="bottleReportListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" GridPane.columnIndex="2">
+                    <children>
+                        <Label text="Bottled wine report"/>
+                        <ListView fx:id="bottledWineReportListView" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <Label fx:id="messageLabel">
+            <BorderPane.margin>
+                <Insets top="0" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>
